@@ -1,0 +1,54 @@
+########## control parameters
+radixType = LaSO        # run identifier
+ncores = 4	       # number of cores 
+multiplier = 64	       # k-points grid multipl factor
+n_ene_points = 4000     # number of energy bins
+nTemperatures = 100      # number of Ts
+n_mu_points = 300       # number of bins for chem. pot.
+minTemperature = 100   # lowest temperature (K)
+maxTemperature = 1100  # highest temperature (K)
+tau = 1e-14 	       # constant relaxation time (sec)
+doping_tau_plt = 1e26  # doping for tau plotting (m^-3)
+energy_range = [-0.05,0.4] ######## physical parameters
+permit_infty = 6.23     # high-freq diel const 
+eps_lattice = 12.50     # static diel const
+impurity_charge = 1     # charge of ionized impurities
+mass_e_avg = 0.5   	# average effective mass m_eff/m_e
+deformation_potential = 2.1     # deformation potential in eV
+density = 5.27e3		# density of material, kg/m3 
+speed_sound = 3134		# speed of sound (m/s)
+phonon_replicae = 1		# number of phonon replicae
+scissor = 0.0                   # scissor operator (eV), for insulators only!
+LO_energies = [0.015,0.029,0.038] # LO energies (eV)
+
+######## lattice thermal conductivity ##########
+
+### a) constant k: input tensor [[k0x,0,0],[0,k0y,0],[0,0,k0z]]
+### b) T-dep k=k0*(300/T): input [[-k0x,0,0],[0,-k0y,0],[0,0,-k0z]]
+### c) read from file 'latthcond': input k = [[0,0,0],[0,0,0],[0,0,0]]
+###
+### latthcond must contain k in the form:
+### k[T1]
+### k[T2]
+### ...
+### matching T range (your responsibility)
+###
+### set k here:
+#
+# latticeThermalConductivity = [[1.8,0,0],[0,1.8,0],[0,0,1.8]]
+# latticeThermalConductivity = [[-8,0,0],[0,-8,0],[0,0,-8]]
+ latticeThermalConductivity = [[0.0,0,0],[0.0,0,0],[0.0,0,0]]
+#
+###
+
+
+
+
+
+
+
+
+
+
+
+

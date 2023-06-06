@@ -1,0 +1,61 @@
+########## control parameters
+
+radixType = SNO        # run identifier
+ncores = 16	       # number of cores 
+
+multiplier = 60	       # k-points grid multipl factor
+n_ene_points = 4000     # number of energy bins
+nTemperatures = 12      # number of Ts
+n_mu_points = 300       # number of bins for chem. pot.
+minTemperature = 200   # lowest temperature
+maxTemperature = 1300  # highest temperature
+tau = 1e-14 	       # constant relaxation time
+doping_tau_plt = 1e26  # doping for tau plotting (m^-3)
+energy_range = [-0.05,0.2]  # interpol range (Har); Fermi=0 
+			    # [0,0] => full window
+######## physical parameters
+
+permit_infty = 4.7    # eps_infty  #mater proj
+eps_lattice = 33.5     # eps_latt
+impurity_charge = 1     # charge of ionized impurities
+mass_e_avg = 0.3   	# average effective mass m_eff/m_e
+deformation_potential = 10     # deformation potential in eV
+density = 4.93e3		# density of material, kg/m3 
+speed_sound = 4438		# speed of sound (m/s)
+LO_energies = [0.0114]		# LO energies in eV (array)
+	      			# TO ==> LO with Lyddane–Sachs–Teller
+### [0.011,0.023,0.031]     a axis LSO
+### [0.016]                 b axis LSO
+phonon_replicae = 1		# number of phonon replicae
+
+######## lattice thermal conductivity ##########
+
+### a) constant k: input tensor [[k0x,0,0],[0,k0y,0],[0,0,k0z]]
+### b) T-dep k=k0*(300/T): input [[-k0x,0,0],[0,-k0y,0],[0,0,-k0z]]
+### c) read from file 'latthcond': input k = [[0,0,0],[0,0,0],[0,0,0]]
+###
+### latthcond must contain k in the form:
+### k[T1]
+### k[T2]
+### ...
+### matching T range (your responsibility)
+###
+### set k here:
+#
+ latticeThermalConductivity = [[1.8,0,0],[0,1.8,0],[0,0,1.8]]
+# latticeThermalConductivity = [[-8,0,0],[0,-8,0],[0,0,-8]]
+# latticeThermalConductivity = [[0,0,0],[0,0,0],[0,0,0]]
+#
+###
+
+
+
+
+
+
+
+
+
+
+
+
